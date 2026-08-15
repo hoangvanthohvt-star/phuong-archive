@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Ava Marlowe Fine Art</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav-group">
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="about.html">About</a>
+  </nav>
+  <a href="index.html" class="logo">Ava Marlowe<small>Fine Art</small></a>
+  <nav class="nav-group nav-right">
+    <a href="contact.html">Contact</a>
+  </nav>
+  <button class="mobile-toggle">&#9776;</button>
+  <nav class="mobile-menu">
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Original Paintings</span>
+      <h2>Gallery</h2>
+      <p>Every piece below is an original, one-of-a-kind canvas painting.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:40px;">
+  <div class="container">
+    <div class="gallery-toolbar">
+      <div class="filter-tags">
+        <button data-tag="All" class="active">All</button>
+        <button data-tag="Landscape">Landscape</button>
+        <button data-tag="Botanical">Botanical</button>
+        <button data-tag="Still Life">Still Life</button>
+      </div>
+      <span id="result-count"></span>
+      <select id="sort-select">
+        <option value="featured">Featured</option>
+        <option value="newest">Newest</option>
+        <option value="az">Alphabetically, A-Z</option>
+        <option value="price-low">Price, Low to High</option>
+        <option value="price-high">Price, High to Low</option>
+      </select>
+    </div>
+    <div class="grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Ava Marlowe Fine Art</h4>
+        <p>Original canvas paintings, painted and shipped from the studio.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="gallery.html">Gallery</a>
+        <a href="gallery.html?tag=Landscape">Landscape</a>
+        <a href="gallery.html?tag=Botanical">Botanical</a>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Ava Marlowe Fine Art. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close">&times;</button>
+  <div class="lightbox-inner">
+    <div class="lightbox-img"><img src="" alt=""></div>
+    <div class="lightbox-details">
+      <span class="meta lb-tag"></span>
+      <h2 class="lb-title"></h2>
+      <div class="lb-meta"></div>
+      <div class="price lb-price"></div>
+      <a href="contact.html" class="btn btn-dark" style="text-align:center;">Inquire About This Piece</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/paintings.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
