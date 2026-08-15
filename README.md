@@ -1,4 +1,4 @@
-# Ava Marlowe Fine Art — Canvas Painting Gallery
+# Phuong Archive Fine Art — Canvas Painting Gallery
 
 A static, no-build-tools website for showcasing original canvas paintings, styled after a minimal gallery/print-shop aesthetic (cream background, serif headings, hairline dividers).
 
@@ -36,7 +36,7 @@ The hero images and category tile images near the top of `index.html` / `about.h
 
 ## Renaming the studio/artist
 
-"Ava Marlowe" is a placeholder name used in the logo, page titles, and footer across all four HTML files. Find-and-replace "Ava Marlowe" with your own name/brand in each file.
+"Phuong Archive" is a placeholder name used in the logo, page titles, and footer across all four HTML files. Find-and-replace "Phuong Archive" with your own name/brand in each file.
 
 ## Contact form
 
