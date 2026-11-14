@@ -34,6 +34,13 @@ All placeholder images currently come from picsum.photos (random stock photos) s
 
 The hero images and category tile images near the top of `index.html` / `about.html` are separate `<img>` tags — replace those `src` values directly with your own photos when ready.
 
+## Marking a piece as sold
+
+Each painting in `js/paintings.js` has a `sold` field — set it to `true` once a piece sells, `false` while it's still available. Sold pieces stay in the same grid alongside everything else (so visitors get the full sense of your body of work in one place, not a separate "sold" section), but their status shows inline:
+
+- their badge and price area read "Sold" instead of a price,
+- the lightbox's call-to-action switches to "Ask About a Commission" instead of "Inquire About This Piece," steering interest toward commissioning something similar.
+
 ## Renaming the studio/artist
 
 "Phuong Archive" is a placeholder name used in the logo, page titles, and footer across all four HTML files. Find-and-replace "Phuong Archive" with your own name/brand in each file.

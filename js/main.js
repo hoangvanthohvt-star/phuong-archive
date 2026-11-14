@@ -11,16 +11,22 @@ document.addEventListener('click', (e) => {
 });
 
 function cardTemplate(p) {
+  const badge = p.sold
+    ? '<span class="card-badge sold">Sold</span>'
+    : (p.featured ? '<span class="card-badge">Featured</span>' : '');
+  const price = p.sold
+    ? '<div class="price sold-label">Sold</div>'
+    : `<div class="price">${p.price}</div>`;
   return `
     <div class="card" data-id="${p.id}">
       <div class="card-image">
-        ${p.featured ? '<span class="card-badge">Featured</span>' : ''}
+        ${badge}
         <img src="${p.image}" alt="${p.title}" loading="lazy">
       </div>
       <div class="card-info">
         <h3>${p.title}</h3>
         <div class="meta">${p.size} &middot; ${p.medium}</div>
-        <div class="price">${p.price}</div>
+        ${price}
       </div>
     </div>
   `;
@@ -45,7 +51,16 @@ function openLightbox(p) {
   lightbox.querySelector('.lb-tag').textContent = `${p.tag} · ${p.year}`;
   lightbox.querySelector('.lb-title').textContent = p.title;
   lightbox.querySelector('.lb-meta').textContent = `${p.size} · ${p.medium}`;
-  lightbox.querySelector('.lb-price').textContent = p.price;
+
+  const priceEl = lightbox.querySelector('.lb-price');
+  priceEl.textContent = p.sold ? 'Sold' : p.price;
+  priceEl.classList.toggle('sold-label', !!p.sold);
+
+  const ctaEl = lightbox.querySelector('.lb-cta');
+  if (ctaEl) {
+    ctaEl.textContent = p.sold ? 'Ask About a Commission' : 'Inquire About This Piece';
+  }
+
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -92,11 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const initialTag = params.get('tag') || 'All';
 
-    const filterButtons = document.querySelectorAll('.filter-tags button');
+    const filterButtons = document.querySelectorAll('#category-filter button');
     const sortSelect = document.getElementById('sort-select');
 
     function currentFilter() {
-      const active = document.querySelector('.filter-tags button.active');
+      const active = document.querySelector('#category-filter button.active');
       return active ? active.getAttribute('data-tag') : 'All';
     }
 

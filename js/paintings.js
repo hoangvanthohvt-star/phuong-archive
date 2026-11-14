@@ -8,6 +8,14 @@
     3. Edit title / size / medium / price / description / tag as needed.
   Nothing else in the site needs to change — the gallery and homepage
   are both generated from this array automatically.
+
+  SOLD PIECES
+  -----------
+  Set "sold: true" on any piece that's already been sold. It still shows up
+  in the gallery (so visitors get the full sense of your range), but its
+  badge and price area read "Sold" instead of a price, and the lightbox
+  CTA switches to "Ask About a Commission" instead of "Inquire About This
+  Piece". Set "sold: false" for anything still available to buy.
 */
 
 const PAINTINGS = [
@@ -20,6 +28,7 @@ const PAINTINGS = [
     price: "$680",
     year: "2024",
     featured: true,
+    sold: false,
     image: "https://picsum.photos/seed/canvas-marigold/900/1125"
   },
   {
@@ -31,6 +40,7 @@ const PAINTINGS = [
     price: "$960",
     year: "2024",
     featured: true,
+    sold: false,
     image: "https://picsum.photos/seed/canvas-coastline/900/1125"
   },
   {
@@ -42,6 +52,7 @@ const PAINTINGS = [
     price: "$480",
     year: "2023",
     featured: true,
+    sold: true,
     image: "https://picsum.photos/seed/canvas-vessel/900/1125"
   },
   {
@@ -53,6 +64,7 @@ const PAINTINGS = [
     price: "$420",
     year: "2024",
     featured: false,
+    sold: false,
     image: "https://picsum.photos/seed/canvas-meadow/900/1125"
   },
   {
@@ -64,6 +76,7 @@ const PAINTINGS = [
     price: "$820",
     year: "2023",
     featured: false,
+    sold: true,
     image: "https://picsum.photos/seed/canvas-lakeside/900/1125"
   },
   {
@@ -75,6 +88,7 @@ const PAINTINGS = [
     price: "$390",
     year: "2024",
     featured: false,
+    sold: false,
     image: "https://picsum.photos/seed/canvas-citrus/900/1125"
   },
   {
@@ -86,6 +100,7 @@ const PAINTINGS = [
     price: "$740",
     year: "2023",
     featured: true,
+    sold: false,
     image: "https://picsum.photos/seed/canvas-goldenfields/900/1125"
   },
   {
@@ -97,6 +112,7 @@ const PAINTINGS = [
     price: "$260",
     year: "2024",
     featured: false,
+    sold: true,
     image: "https://picsum.photos/seed/canvas-peony/900/1125"
   },
   {
@@ -108,6 +124,7 @@ const PAINTINGS = [
     price: "$690",
     year: "2022",
     featured: false,
+    sold: true,
     image: "https://picsum.photos/seed/canvas-harbor/900/1125"
   },
   {
@@ -119,6 +136,7 @@ const PAINTINGS = [
     price: "$340",
     year: "2024",
     featured: false,
+    sold: false,
     image: "https://picsum.photos/seed/canvas-kitchen/900/1125"
   },
   {
@@ -130,6 +148,7 @@ const PAINTINGS = [
     price: "$860",
     year: "2023",
     featured: false,
+    sold: false,
     image: "https://picsum.photos/seed/canvas-dune/900/1125"
   },
   {
@@ -141,6 +160,7 @@ const PAINTINGS = [
     price: "$520",
     year: "2024",
     featured: false,
+    sold: false,
     image: "https://picsum.photos/seed/canvas-orchids/900/1125"
   }
 ];
