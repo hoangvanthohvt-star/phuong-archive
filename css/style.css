@@ -423,6 +423,10 @@ img { max-width: 100%; display: block; }
   background: var(--ink-soft);
 }
 
+.card-badge.bundle {
+  background: var(--accent-dark);
+}
+
 .card-info {
   padding-top: 16px;
   text-align: left;

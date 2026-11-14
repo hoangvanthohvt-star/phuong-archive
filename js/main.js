@@ -13,7 +13,9 @@ document.addEventListener('click', (e) => {
 function cardTemplate(p) {
   const badge = p.sold
     ? '<span class="card-badge sold">Sold</span>'
-    : (p.featured ? '<span class="card-badge">Featured</span>' : '');
+    : p.bundle
+      ? '<span class="card-badge bundle">Bundle</span>'
+      : (p.featured ? '<span class="card-badge">Featured</span>' : '');
   const price = p.sold
     ? '<div class="price sold-label">Sold</div>'
     : `<div class="price">${p.price}</div>`;
@@ -58,7 +60,11 @@ function openLightbox(p) {
 
   const ctaEl = lightbox.querySelector('.lb-cta');
   if (ctaEl) {
-    ctaEl.textContent = p.sold ? 'Ask About a Commission' : 'Inquire About This Piece';
+    ctaEl.textContent = p.sold
+      ? 'Ask About a Commission'
+      : p.bundle
+        ? 'Inquire About This Set'
+        : 'Inquire About This Piece';
   }
 
   lightbox.classList.add('visible');

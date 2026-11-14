@@ -51,6 +51,10 @@ Each painting in `js/paintings.js` has a `sold` field — set it to `true` once 
 - their badge and price area read "Sold" instead of a price,
 - the lightbox's call-to-action switches to "Ask About a Commission" instead of "Inquire About This Piece," steering interest toward commissioning something similar.
 
+## Selling a combo/bundle
+
+Set `bundle: true` on a painting object to list it as a set rather than a single piece (see "The Costume Cat Collection" in `js/paintings.js` for an example, using a group photo of all 4 canvases together as its image). Bundle listings get a distinct "Bundle" badge instead of "Featured," and their lightbox CTA reads "Inquire About This Set." They're left out of the homepage's featured grid by default (`featured: false`) since that section is framed around single one-of-a-kind pieces — flip it to `true` if you'd rather promote the bundle there too.
+
 ## Renaming the studio/artist
 
 "Phuong Archive" is a placeholder name used in the logo, page titles, and footer across all four HTML files. Find-and-replace "Phuong Archive" with your own name/brand in each file.

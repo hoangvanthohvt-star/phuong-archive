@@ -29,7 +29,7 @@
 const PAINTINGS = [
   {
     id: 1,
-    title: "The Young Wizard",
+    title: "Hairy Pawter",
     tag: "Cat Portraits",
     size: "4 x 4\"",
     medium: "Acrylic on canvas panel",
@@ -74,10 +74,23 @@ const PAINTINGS = [
     featured: true,
     sold: false,
     image: "images/mona-lisa-cat.jpg"
+  },
+  {
+    id: 5,
+    title: "The Costume Cat Collection",
+    tag: "Cat Portraits",
+    size: "Set of 4 — 4 x 4\" each",
+    medium: "Acrylic on canvas panel",
+    price: "Inquire for Pricing",
+    year: "2026",
+    featured: false,
+    sold: false,
+    bundle: true,
+    image: "images/bundle-of-4.jpg"
   }
 ];
 
 const CATEGORY_TILES = [
   { label: "Cat Portraits", tag: "Cat Portraits", image: "images/wizard-cat.jpg" },
-  { label: "All Originals", tag: "All", image: "images/studio-shelf.jpg" }
+  { label: "All Originals", tag: "All", image: "images/santa-cat.jpg" }
 ];
