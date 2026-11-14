@@ -61,8 +61,11 @@ function openLightbox(p) {
     ctaEl.textContent = p.sold ? 'Ask About a Commission' : 'Inquire About This Piece';
   }
 
-  lightbox.classList.add('open');
+  lightbox.classList.add('visible');
   document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => lightbox.classList.add('open'));
+  });
 }
 
 function closeLightbox() {
@@ -70,6 +73,7 @@ function closeLightbox() {
   if (!lightbox) return;
   lightbox.classList.remove('open');
   document.body.style.overflow = '';
+  setTimeout(() => lightbox.classList.remove('visible'), 300);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

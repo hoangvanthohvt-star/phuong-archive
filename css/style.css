@@ -138,6 +138,17 @@ img { max-width: 100%; display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform-origin: center;
+  animation: heroZoom 22s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.14); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero img { animation: none; }
 }
 
 .hero::after {
@@ -288,10 +299,10 @@ img { max-width: 100%; display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.tile:hover img { transform: scale(1.06); }
+.tile:hover img { transform: scale(1.12); }
 
 .tile span {
   position: absolute;
@@ -367,6 +378,11 @@ img { max-width: 100%; display: block; }
 
 .card {
   cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .card-image {
@@ -374,16 +390,22 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   background: var(--bg-alt);
   aspect-ratio: 4/5;
+  box-shadow: 0 8px 24px rgba(74,42,26,0);
+  transition: box-shadow 0.4s ease;
+}
+
+.card:hover .card-image {
+  box-shadow: 0 18px 34px rgba(74,42,26,0.22);
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.card:hover .card-image img { transform: scale(1.04); }
+.card:hover .card-image img { transform: scale(1.08); }
 
 .card-badge {
   position: absolute;
@@ -443,7 +465,7 @@ img { max-width: 100%; display: block; }
   padding: 40px;
 }
 
-.lightbox.open { display: flex; }
+.lightbox.visible { display: flex; }
 
 .lightbox-inner {
   background: var(--bg);
@@ -453,16 +475,31 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   overflow: auto;
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lightbox.open .lightbox-inner {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .lightbox-img {
   background: var(--bg-alt);
+  overflow: hidden;
 }
 
 .lightbox-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lightbox.open .lightbox-img img {
+  transform: scale(1);
 }
 
 .lightbox-details {
